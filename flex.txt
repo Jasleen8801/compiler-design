@@ -1,0 +1,17 @@
+extension - .l 
+
+passed through the lex compiler and always generate a file "lex.yy.c" which is passed through the normal c/c++ compiler and it will generate "a.out" in linux and "a.exe" in windows
+
+lex creates a token generator and input sequence will give sequence of tokens 
+
+// lex program has three sections seperated by %%
+
+{ Definition/Declaration section } // define the tokens (optional section)
+digit[0-9]
+%%
+{ Rule/ R.E./ Transaction Rule } // sentence has pattern {action}
+[digit] {...}
+%%
+{ Main function, auxiliary functions }
+yylex function always called in main function
+yywrap function indicate the end of the input 
