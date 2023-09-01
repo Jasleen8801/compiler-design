@@ -3,10 +3,10 @@
     a) The set of all string ending in 00.
     b) The set of all strings with three consecutive 222’s.
     c) The set of all string such that every block of five consecutive symbols contains at least two 5’s.
+    d) The set of all string such that every block of five consecutive symbols contains at most two 5’s.
     */
 %}
 
-%%
 [0-9]*00 {
     printf("Token A: %s\n", yytext);
 }
@@ -19,6 +19,10 @@
     printf("Token C: %s\n", yytext);
 }
 
+([0-9]*5[0-9]*5?[0-9]*|[^5]*5?[^5]*)+ {
+    printf("Token D: %s\n", yytext);
+}
+
 %%
 
 int main() {
@@ -26,8 +30,9 @@ int main() {
     return 0;
 }
 
+%{
 // TO run this program:
 // ❯ flex 5.l
 // ❯ gcc lex.yy.c -o output/5 -lfl
-// ❯ ./output/5 < input_strings.txt
-
+// ❯ ./output/5 < input_strings.txt    
+%}
