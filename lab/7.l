@@ -38,12 +38,6 @@ cons[^aeiouAEIOU]
     fprintf(yyout, " ");
 }
 
-"\n" {
-	/* Skip newlines */
-	printf("\n");
-	fprintf(yyout, "\n");	
-}
-
 [^a-zA-Z \n]+ {
     /* Copy all other characters as-is */
     printf("%s", yytext);
