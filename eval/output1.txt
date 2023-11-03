@@ -1,0 +1,9 @@
+Hello
+message
+server
+are
+checking
+vowels
+more
+aeios
+
